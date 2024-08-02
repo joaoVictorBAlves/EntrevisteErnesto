@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(response => response.json())
         .then(data => {
             const questions = data.questions;
-            console.log(questions.length);
             let playerName = '';
             let isPlayerTurn = Math.random() < 0.5;
+            let timerInterval;
 
             const startGameButton = document.getElementById("startGameButton");
             const generateQuestionButton = document.getElementById("generateQuestionButton");
@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const playerNameInput = document.getElementById("playerNameInput");
             const questionContainer = document.getElementById("questionContainer");
             const questionText = document.getElementById("questionText");
+            const timerText = document.getElementById("timerText");
 
             startGameButton.addEventListener("click", () => {
                 playerName = playerNameInput.value.trim();
@@ -39,9 +40,27 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             function generateNewQuestion() {
+                clearInterval(timerInterval);
                 const randomIndex = Math.floor(Math.random() * questions.length);
                 const question = questions[randomIndex];
                 questionText.innerHTML = (isPlayerTurn ? "<strong>" + playerName + ":</strong> " : "<strong>Ernesto:</strong> ") + question;
+                startTimer();
+            }
+
+            function startTimer() {
+                let timeLeft = 60;
+                timerText.innerHTML = `Tempo restante: ${timeLeft}s`;
+
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    timerText.innerHTML = `Tempo restante: ${timeLeft}s`;
+
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        isPlayerTurn = !isPlayerTurn;
+                        generateNewQuestion();
+                    }
+                }, 1000);
             }
         })
         .catch(error => {
