@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>De Frente com Ernesto</title>
+    <link rel="icon" href="./assets/ernesto.png" type="image/png">
+    <style>
+        .group2 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="group1">
+            <h1>De frente com Ernesto</h1>
+            <input type="text" id="playerNameInput" placeholder="Digite seu nome">
+            <button id="startGameButton">Iniciar Jogo</button>
+            <button id="generateQuestionButton" style="display: none;">Gerar pergunta</button>
+        </div>
+        <hr>
+        <div class="group2" id="questionContainer">
+            <img src="./assets/ernesto.png" alt="ernesto">
+            <div class="question">
+                <p id="questionText">O intuito do jogo é estimular uma conversa entre duas pessoas
+                    através de perguntas! Vamos começar!</p>
+            </div>
+            <span id="skipQuestionButton" style="display: none;">Pular pergunta</span>
+
+        </div>
+        <footer>
+            <p>Desenvolvido por <a href="https://github.com/joaoVictorBAlves">@João Victor</a></p>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
