@@ -48,11 +48,3 @@ Para personalizar o jogo:
 
 2. **Estilos:**
    - Edite `style.css` para modificar a aparência da página.
-
-## 📜 Licença
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
-
----
-
-Espero que isso ajude a documentar o seu projeto! Se precisar de mais detalhes ou ajustes, é só avisar.
