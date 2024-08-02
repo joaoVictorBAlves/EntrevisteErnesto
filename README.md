@@ -3,6 +3,9 @@
 Bem-vindo ao "De Frente com Ernesto", um joguinho básico que apresenta um sistema de perguntas. O intuito do jogo é estimular uma conversa entre duas pessoas
                     através de perguntas! Vamos começar!
 
+![image](https://github.com/user-attachments/assets/0585d90f-2686-4c38-aa8a-fa680c4ac818)
+
+
 ## 📦 Requisitos
 
 - Navegador Web (Chrome, Firefox, etc.)
